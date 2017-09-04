@@ -55,5 +55,20 @@ public class Rod {
 		return MemoizedCutRodAux(prices, n);
 	}
 	
+	public double BottomUpCutRod(int[] prices, int n)
+	{
+	    this.revenues[0] = 0.0;
+	    for(int j = 1; j <= n; j++)
+	    {
+	    	double q = -9999999.99;
+	    	for(int i = 1; i <= j; i++)
+	    	{
+	    	    q = Math.max(q, prices[i-1] + this.revenues[j-i]);
+	    	}
+	    	this.revenues[j] = q;
+	    }
+	    return this.revenues[n];
+	}
+	
 	
 }

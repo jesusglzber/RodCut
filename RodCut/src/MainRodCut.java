@@ -12,6 +12,10 @@ public class MainRodCut {
 		Rod r2 = new Rod(10);
 		double revenue2 = r2.MemoizedCutRod(prices, 4);
 		System.out.println("Revenue: " + revenue2);
+		
+		Rod r3 = new Rod(10);
+		double revenue3 = r3.BottomUpCutRod(prices, 10);
+		System.out.println("Revenue: " + revenue3);
 	}
 
 }
